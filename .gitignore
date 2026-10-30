@@ -1,0 +1,4 @@
+dados_brutos/
+*.pkl
+bairros_bruto.geojson
+__pycache__/

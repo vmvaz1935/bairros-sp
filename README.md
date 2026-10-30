@@ -13,9 +13,18 @@ Mapa interativo: [`docs/index.html`](docs/index.html). Abra o arquivo no navegad
 | `dados/bairros_sp.geojson` | 1.854 polígonos (WGS84) com `bairro`, `distrito`, `area_km2`, `enderecos` e `partes` |
 | `dados/distritos_sp.geojson` | Os 96 distritos oficiais (do OpenStreetMap, simplificados) |
 | `dados/osm_bairros_e_distritos.geojson` | Extração do OpenStreetMap: distritos, polígonos e pontos de bairro |
+| `kml/bairros_sp.kml` | Os bairros em KML, para o Google My Maps e o Google Earth |
 | `docs/index.html` | Mapa com busca, zoom e lista dos bairros por distrito |
 | `dados_brutos/` | Entradas originais: CNEFE 2022 da capital (`3550308_SAO_PAULO.zip`, 186 MB, dividido em `.part00` e `.part01`), CEPs da capital (`cep_sp.csv`) e `SHA256SUMS` |
 | `scripts/` | Etapas de 01 a 06 para reproduzir tudo |
+
+## No Google Maps
+
+1. Abra o [Google My Maps](https://www.google.com/mymaps) e crie um mapa.
+2. Na camada sem título, clique em **Importar** e envie `kml/bairros_sp.kml`.
+3. Em **Estilo uniforme**, troque para **Estilo individual** se as cores não aparecerem.
+
+O mapa fica salvo no Google Drive e abre no app Google Maps do celular, em **Você → Mapas**. No Google Earth web, use **Projetos → Abrir → Importar arquivo KML**.
 
 ## Método
 

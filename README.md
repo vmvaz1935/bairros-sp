@@ -14,6 +14,7 @@ Mapa interativo: [`docs/index.html`](docs/index.html). Abra o arquivo no navegad
 | `dados/distritos_sp.geojson` | Os 96 distritos oficiais (do OpenStreetMap, simplificados) |
 | `dados/osm_bairros_e_distritos.geojson` | Extração do OpenStreetMap: distritos, polígonos e pontos de bairro |
 | `docs/index.html` | Mapa com busca, zoom e lista dos bairros por distrito |
+| `dados_brutos/` | Entradas originais: CNEFE 2022 da capital (`3550308_SAO_PAULO.zip`, 186 MB, dividido em `.part00` e `.part01`), CEPs da capital (`cep_sp.csv`) e `SHA256SUMS` |
 | `scripts/` | Etapas de 01 a 06 para reproduzir tudo |
 
 ## Método
@@ -41,7 +42,7 @@ Mapa interativo: [`docs/index.html`](docs/index.html). Abra o arquivo no navegad
 
 ```bash
 pip install -r requirements.txt
-bash scripts/01_baixar_dados.sh
+bash scripts/01_baixar_dados.sh   # remonta o zip do CNEFE e confere o SHA-256
 python scripts/02_carregar_cnefe.py
 python scripts/03_juntar_cep.py
 python scripts/04_tracar_bairros.py
@@ -50,6 +51,8 @@ python scripts/06_conferir.py
 ```
 
 O processo usa cerca de 4 GB de RAM e leva uns 10 minutos.
+
+Para remontar o arquivo do CNEFE à mão: `cat dados_brutos/3550308_SAO_PAULO.zip.part* > dados_brutos/3550308_SAO_PAULO.zip`. No Windows: `copy /b 3550308_SAO_PAULO.zip.part00+3550308_SAO_PAULO.zip.part01 3550308_SAO_PAULO.zip`.
 
 ## Fontes e licenças
 
